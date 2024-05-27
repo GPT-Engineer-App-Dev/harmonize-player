@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Box, Button, Container, Flex, FormControl, FormLabel, Heading, Input, VStack, Text, Checkbox, CheckboxGroup } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 
 const CreatePlaylist = () => {
   const [playlistName, setPlaylistName] = useState("");
@@ -53,6 +54,9 @@ const CreatePlaylist = () => {
         </FormControl>
         <Button colorScheme="blue" onClick={handleCreatePlaylist}>
           Create Playlist
+        </Button>
+        <Button as={RouterLink} to="/player" colorScheme="teal">
+          Go to Player
         </Button>
       </VStack>
     </Container>
