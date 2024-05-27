@@ -1,4 +1,4 @@
-import { Box, Container, VStack, Text, Flex, Heading, Image, Link, HStack } from "@chakra-ui/react";
+import { Box, Container, VStack, Text, Flex, Heading, Image, Link, HStack, Button } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 
 const Index = () => {
@@ -20,6 +20,9 @@ const Index = () => {
             <Link as={RouterLink} to="/library" _hover={{ textDecoration: "none", color: "gray.400" }}>
               Library
             </Link>
+            <Link as={RouterLink} to="/create-playlist" _hover={{ textDecoration: "none", color: "gray.400" }}>
+              Create Playlist
+            </Link>
           </HStack>
         </Flex>
       </Box>
@@ -34,6 +37,9 @@ const Index = () => {
           <Text fontSize="lg" textAlign="center" maxW="container.md">
             Discover the latest hits and trending music in our featured playlist. Updated weekly to bring you the freshest tracks.
           </Text>
+          <Button as={RouterLink} to="/create-playlist" colorScheme="blue">
+            Create Playlist
+          </Button>
         </VStack>
       </Container>
 
