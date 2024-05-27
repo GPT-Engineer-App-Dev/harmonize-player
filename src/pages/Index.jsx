@@ -1,19 +1,60 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Box, Container, VStack, Text, Flex, Heading, Image, Link, HStack } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
-      </VStack>
-    </Container>
+    <Box>
+      {/* Navigation Bar */}
+      <Box as="nav" bg="gray.900" color="white" py={4} px={8}>
+        <Flex justify="space-between" align="center">
+          <Heading as="h1" size="lg">
+            MusicStream
+          </Heading>
+          <HStack spacing={8}>
+            <Link as={RouterLink} to="/" _hover={{ textDecoration: "none", color: "gray.400" }}>
+              Home
+            </Link>
+            <Link as={RouterLink} to="/browse" _hover={{ textDecoration: "none", color: "gray.400" }}>
+              Browse
+            </Link>
+            <Link as={RouterLink} to="/library" _hover={{ textDecoration: "none", color: "gray.400" }}>
+              Library
+            </Link>
+          </HStack>
+        </Flex>
+      </Box>
+
+      {/* Main Section */}
+      <Container maxW="container.xl" py={16}>
+        <VStack spacing={8} align="center">
+          <Heading as="h2" size="xl">
+            Featured Playlist
+          </Heading>
+          <Image src="/images/featured-playlist.jpg" alt="Featured Playlist" borderRadius="md" />
+          <Text fontSize="lg" textAlign="center" maxW="container.md">
+            Discover the latest hits and trending music in our featured playlist. Updated weekly to bring you the freshest tracks.
+          </Text>
+        </VStack>
+      </Container>
+
+      {/* Footer */}
+      <Box as="footer" bg="gray.900" color="white" py={8} px={8}>
+        <Flex justify="space-between" align="center" direction={{ base: "column", md: "row" }}>
+          <Text>&copy; {new Date().getFullYear()} MusicStream. All rights reserved.</Text>
+          <HStack spacing={8} mt={{ base: 4, md: 0 }}>
+            <Link as={RouterLink} to="/about" _hover={{ textDecoration: "none", color: "gray.400" }}>
+              About
+            </Link>
+            <Link as={RouterLink} to="/contact" _hover={{ textDecoration: "none", color: "gray.400" }}>
+              Contact
+            </Link>
+            <Link as={RouterLink} to="/terms" _hover={{ textDecoration: "none", color: "gray.400" }}>
+              Terms of Service
+            </Link>
+          </HStack>
+        </Flex>
+      </Box>
+    </Box>
   );
 };
 
